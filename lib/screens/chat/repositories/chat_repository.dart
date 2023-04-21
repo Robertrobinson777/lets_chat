@@ -1,8 +1,10 @@
 import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uuid/uuid.dart';
+
 import '../../../models/chat.dart';
 import '../../../models/group.dart';
 import '../../../models/message.dart';
@@ -326,7 +328,7 @@ class ChatRepository {
     // receiver chat
     Chat receiverChat = Chat(
       name: senderUser.name,
-      profilePic: senderUser.profilePic!,
+      profilePic: senderUser.profilePic ?? '',
       userId: senderUser.uid,
       time: time,
       lastMessage: lastMessage,
